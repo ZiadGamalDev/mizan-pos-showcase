@@ -1,0 +1,10 @@
+# Ignore everything
+*
+!*/
+
+# Un-ignore specific files and folders
+!README.md
+!docs/
+!assets/
+!.gitignore
+!.gitattributes
