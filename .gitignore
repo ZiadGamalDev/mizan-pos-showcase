@@ -4,7 +4,10 @@
 
 # Un-ignore specific files and folders
 !README.md
+!LICENSE
 !docs/
-!assets/
+!docs/**
+!screenshots/
+!screenshots/**
 !.gitignore
 !.gitattributes
