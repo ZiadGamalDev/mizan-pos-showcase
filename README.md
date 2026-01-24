@@ -53,31 +53,31 @@ Mizan POS was engineered to solve critical operational bottlenecks for mid-sized
 
 ### Dashboard & Analytics
 The command center for business owners.
-![Dashboard Dark](../assets/screenshots/dashboard-dark.png)
+![Dashboard Dark](screenshots/dashboard-dark.png)
 
 ### The Point of Sale (POS)
 Streamlined checkout interface with hold cart and barcode support.
-![POS Interface](../assets/screenshots/pos-view.png)
+![POS Interface](screenshots/pos-view.png)
 
 ### Sales History
 Detailed transaction logs with one-click returns.
-![Sales History](../assets/screenshots/sales-view-1.png)
+![Sales History](screenshots/sales_history.png)
 
 ### Inventory Management
 Real-time stock tracking and low-stock alerts.
-![Inventory](../assets/screenshots/inventory.png)
+![Inventory](screenshots/inventory.png)
 
 ### Reporting Engine
 Visual financial reports (Daily, Weekly, Monthly).
-![Reports](../assets/screenshots/reports-1.png)
+![Reports](screenshots/reports-1.png)
 
 ### Settings & Configuration
 Granular control over taxes, receipts, and system behavior.
-![Settings](../assets/screenshots/settings.png)
+![Settings](screenshots/dashboard_en.png)
 
 ### Role Management
 Secure RBAC for Cashiers, Managers, and Admins.
-![Roles](../assets/screenshots/05_Roles_Permissions.png)
+![Roles](screenshots/permissions_roles.png)
 
 ---
 
