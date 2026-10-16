@@ -1,21 +1,21 @@
 # Mizan POS
-**Advanced Cloud-Based Point of Sale System**
+**Point of Sale web app (Laravel + Inertia React)**
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-pos.ziadgamal.com-brightgreen?style=for-the-badge&logo=google-chrome)](https://pos.ziadgamal.com)
 
-A production-grade, monolithic Point of Sale (POS) solution built for high-volume retail environments. Designed to handle inventory management, real-time sales analytics, and multi-role staff management with atomic precision.
+A monolithic Point of Sale (POS) web app for small and mid-sized retail shops: inventory with variants, sales with returns and voids, reports, and multi-role staff management. Checkout runs inside database transactions.
 
-**Developed by:** [Ziad Gamal](https://ziadgamal.com) - Lead Full-Stack Engineer
+**Developed by:** [Ziad Gamal](https://ziadgamal.com) - Backend Developer
 
 ---
 
 ## Business Impact
 
-Mizan POS was engineered to solve critical operational bottlenecks for mid-sized retail businesses:
+What it is built to solve for small retail shops:
 
-*   **Zero-Data-Loss Checkout**: Implemented atomic database transactions to ensure inventory is strictly synchronized with sales, eliminating "phantom stock" issues.
-*   **Operational Efficiency**: Reduced checkout time by **40%** via an optimized, keyboard-friendly React interface that requires zero page reloads.
-*   **Data-Driven Decisions**: Provides owners with real-time insights (Z-Reports, Profit Margins, Stock Alerts), enabling data-backed purchasing decisions.
+*   **Consistent stock**: checkout, void and return each run in one database transaction, and every stock movement is written to an append-only stock ledger.
+*   **Fast checkout**: a React interface served through Inertia.js, so the POS screen works without full page reloads.
+*   **Reports**: Z-Reports, sales reports with PDF export, and low and out-of-stock alerts.
 
 ---
 
@@ -23,18 +23,17 @@ Mizan POS was engineered to solve critical operational bottlenecks for mid-sized
 
 ### Turbo-Charged POS Interface
 *   **Speed**: Built with React & Inertia.js for instant interactions.
-*   **Flexibility**: Supports barcode scanning, dynamic product search, and hold/resume cart functionality.
-*   **Reliability**: Offline-tolerant architecture queues sales locally if the connection drops.
+*   **Flexibility**: Product search by name, SKU or barcode.
 
 ### Smart Inventory Management
-*   **Real-time Tracking**: `StockLedger` system tracks every single movement (Sales, Returns, Adjustments).
-*   **Variants**: Full support for complex products (Size, Color, Material).
-*   **Alerts**: Low-stock notifications based on configurable thresholds.
+*   **Stock history**: `StockLedger` table tracks every single movement (Sales, Returns, Adjustments).
+*   **Variants**: Products with variants, each with its own stock and price.
+*   **Alerts**: Low-stock and out-of-stock views.
 
 ### Financial Intelligence
-*   **Z-Reports**: Automated end-of-day financial reconciliation.
-*   **Analytics**: Visual dashboards for daily, weekly, and monthly sales trends.
-*   **Export**: One-click PDF & CSV exports for accounting purposes.
+*   **Z-Reports**: End-of-day sales summary, printable and exportable to PDF.
+*   **Dashboard**: Sales charts built with Recharts.
+*   **Export**: PDF reports and inventory import by CSV.
 
 ---
 
@@ -44,8 +43,8 @@ Mizan POS was engineered to solve critical operational bottlenecks for mid-sized
 | :----------- | :---------------------------------- |
 | **Backend**  | Laravel 12 (PHP 8.2+)               |
 | **Frontend** | React 19, TailwindCSS 4, Inertia.js |
-| **Database** | MySQL 8.0, Redis (Queue/Cache)      |
-| **DevOps**   | Docker, Nginx, CI/CD Pipelines      |
+| **Database** | MySQL 8.0 (SQLite for local dev)    |
+| **DevOps**   | Nginx on a VPS, GitHub Actions (lint and tests) |
 
 ---
 
@@ -83,18 +82,7 @@ Secure RBAC for Cashiers, Managers, and Admins.
 
 ## Deployment
 
-This system is containerized using Docker. To deploy:
-
-```bash
-# 1. Clone the repo
-git clone https://github.com/yourusername/mizan-pos.git
-
-# 2. Setup Env
-cp .env.example .env
-
-# 3. Build & Run
-docker-compose up -d --build
-```
+See [docs/DEPLOYMENT_GUIDE.md](docs/DEPLOYMENT_GUIDE.md) for a VPS setup with Nginx, PHP-FPM and MySQL.
 
 ---
-[Contact Developer](https://ziadgamal.com) | Lead Backend Engineer
+[Contact Developer](https://ziadgamal.com)
